@@ -13,15 +13,15 @@ def main():
         choice = int(input("Enter the Choice: "))
         
         if choice==1:
-            Add=input("Enter the task: ").split()       
+            Add=input("Enter the task: ")      
             task.append(Add)
             print("Task added!")
         elif choice==2:
-            for i in range(len(task)):
-                print(i+1,task[i])
+            for idx,i in enumerate(task):
+                print(f"{idx+1},{i}")
         elif choice==3:
             index_del=int(input("Enter the task number to delete: "))
-            del task[index_del+1]
+            del task[index_del-1]
         elif choice == 4:
                 break
         else:
