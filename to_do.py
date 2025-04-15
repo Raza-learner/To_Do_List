@@ -1,43 +1,37 @@
-import os
-
-task = []
-
+tasks=[]
 
 def main():
-    os.system("clear")
-    print("\nWelcome to TODO TUI")
-    print("---------------------")
-
+    
     while True:
-        os.system("clear")
-        print("---Select The Choice--")
-        print("1.Add Task")
-        print("2.Show Task")
-        print("3.Delete Task")
-        print("4.Edit Task")
-        print("5.Exit")
+        for idx, i in enumerate(tasks[0:6]):
+            print(f"{idx + 1}. {i}")
 
-        choice = int(input("Enter the Choice: "))
+        
+
+        print("[1]Add Task [2]Show All Task [3]Delete Task [4]Edit Task [5]Exit")
+        choice = int(input("Enter Your Choice: "))
 
         if choice == 1:
-            Add = input("Enter the task: ")
-            task.append(Add)
-            print("Task added!")
+            t = input("Enter the task/s:")
+            tasks.append(t)
+
         elif choice == 2:
-            for idx, i in enumerate(task):
-                print(f"{idx + 1}.{i}")
+            for idx, i in enumerate(tasks):
+                print(f"{idx + 1}. {i}")
+
         elif choice == 3:
-            index_del = int(input("Enter the task number to delete: "))
-            del task[index_del - 1]
+            index_del = int(input("Enter the task number to delete:"))
+            del tasks[index_del - 1]
+
         elif choice == 4:
-            edit = int(input("Enter number to edit task :"))
-            change = input("Edit: ")
-            print("Edited")
+            n = int(input("Choose task number:")) - 1
+            edit = input("Edit: ")
+            tasks[n] = edit
+
         elif choice == 5:
             break
+
         else:
             print("Invalid input")
-
-
 if __name__ == "__main__":
     main()
