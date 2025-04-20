@@ -73,7 +73,10 @@ def main():
                     edit = input("Edit task: ")
                     tasks[n] = edit
                     save_tasks()
-                    print("Task updated.")
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print("📋Task updated.")
+                    for idx, task in enumerate(tasks):
+                        print(f"{idx + 1}. {task}")
                 else:
                     print("Invalid task number.")
             except ValueError:
