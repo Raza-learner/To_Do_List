@@ -57,7 +57,10 @@ def main():
                 if 1 <= index_del <= len(tasks):
                     del tasks[index_del - 1]
                     save_tasks()
-                    print("Task deleted.")
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print("📋Task deleted.")
+                    for idx, task in enumerate(tasks):
+                         print(f"{idx + 1}. {task}")
                 else:
                     print("Invalid task number.")
             except ValueError:
