@@ -1,2 +1,5 @@
 # To_Do_List
-Creating  a Basic  python to do list
+This is TUI based TODO List.
+Support-Windows,Linux 
+##Demo Video
+![ToDO Demo](assets/todo.gif)
